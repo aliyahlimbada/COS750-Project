@@ -1,0 +1,142 @@
+// Activist
+.interactive-file-system {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fafafa;
+  text-align: left;
+  font-family: monospace;
+
+  h4 {
+    margin-top: 0;
+    text-align: center;
+    font-family: sans-serif;
+    color: #555;
+  }
+
+  .node {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e9e9e9;
+    }
+  }
+
+  .folder {
+    font-weight: bold;
+    color: #005a9e;
+  }
+
+  .file {
+    color: #333;
+  }
+}
+
+// Theorist
+.uniformity-puzzle {
+  background-color: #f3f6f9;
+  border: 1px solid #d1dce6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+
+  h4 { margin-top: 0; }
+  
+  .code-blocks-puzzle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    pre {
+      background-color: #e9eef3;
+      padding: 0.75rem;
+      border-radius: 4px;
+    }
+  }
+
+  .puzzle-question {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: #005a9e;
+    strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Reflector
+.ripple-effect-scenario {
+  background-color: #fffaf0;
+  border: 1px solid #f7e4c1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  
+  h4 { margin-top: 0; }
+
+  .scenario-diagram {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    .box-scenario {
+      border: 2px dashed #d9a036;
+      padding: 1rem;
+      border-radius: 4px;
+      background-color: #fffef7;
+    }
+  }
+
+  ul {
+    list-style-type: '🤔';
+    padding-left: 2rem;
+    li {
+      padding-left: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Pragmatist
+.feature-request-ticket {
+  background-color: #ffffff;
+  border: 1px solid #dfe1e6;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+
+  .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f5f7;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #dfe1e6;
+    h3 { margin: 0; }
+    .ticket-status {
+      background-color: #0052cc;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+
+  .ticket-body {
+    padding: 1.5rem;
+    h4 { margin-top: 0; }
+    ul {
+      list-style-type: '✔';
+      padding-left: 1.5rem;
+      li {
+        margin-bottom: 0.5rem;
+        &.hard-requirement { font-weight: bold; }
+      }
+    }
+  }
+}

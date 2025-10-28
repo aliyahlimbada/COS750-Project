@@ -3,11 +3,14 @@ import Page from "./components/page";
 import LearningStyleSelector, { type LearningStyle } from "./components/LearningStyleSelector";
 import './styles/app.scss';
 
-// mock visual aids - will put actual in
-const InteractiveFileSystem = () => <div className="visual-placeholder">[Interactive File System Simulation]</div>;
-const ConceptualDiagram = () => <div className="visual-placeholder">[Diagram of Abstract vs. Concrete Classes]</div>;
-const CodeComparison = () => <div className="visual-placeholder">[Side-by-side code snippets]</div>;
-const FileExplorerGif = () => <div className="visual-placeholder">[Animated GIF of a File Explorer]</div>;
+import { 
+  InteractiveFileSystem, 
+  UniformityPuzzle, 
+  RippleEffectScenario, 
+  FeatureRequest 
+} from './components/visuals';
+
+
 
 
 type ContentPiece = {
@@ -31,12 +34,25 @@ const pagesData: PagesData = {
   1: {
     title: "Chapter 1: The File System Challenge",
     content: {
-      Activist: { text: "Your mission: Calculate the total size...", visual: <InteractiveFileSystem /> },
-      Theorist: { text: "Consider this: How can we create a single, elegant function...", visual: <ConceptualDiagram /> },
-      Reflector: { text: "Observe the two code examples below...", visual: <CodeComparison /> },
-      Pragmatist: { text: "You're building a file explorer...", visual: <FileExplorerGif /> }
+      Activist: { 
+        text: "Your mission: Calculate the total size of the 'root' folder. The total size of a folder is the sum of everything inside it.", 
+        visual: <InteractiveFileSystem /> 
+      },
+      Theorist: { 
+        text: "An object is either a single unit or a collection of units. How can we write code that doesn't care which it is?", 
+        visual: <UniformityPuzzle /> 
+      },
+      Reflector: { 
+        text: "A good design decision today can save countless hours tomorrow. Consider the downstream effects of how you choose to represent files and folders.", 
+        visual: <RippleEffectScenario /> 
+      },
+      Pragmatist: { 
+        text: "A user needs to see the total size of their selection. This feature must work flawlessly whether one file, one folder, or a mix of both are selected. Consider how you would build the following system.", 
+        visual: <FeatureRequest /> 
+      }
     }
   },
+
   2: {
     title: "Chapter 2: Your Learning Goals",
     content: {
