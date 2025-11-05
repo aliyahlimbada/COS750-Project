@@ -1,17 +1,12 @@
 import { useState, type JSX } from "react";
-import Page from "./components/page";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import LearningStyleSelector, { type LearningStyle } from "./components/LearningStyleSelector";
+import { InteractiveFileSystem } from "./components/InteractiveFileSystem";
+import { UniformityPuzzle } from "./components/UniformityPuzzle";
+import { RippleEffectScenario } from "./components/RippleEffectScenario";
+import { FeatureRequest } from "./components/FeatureRequest";
+import ProgressBar from "./components/ProgressBar";
 import './styles/app.scss';
-
-import { 
-  InteractiveFileSystem, 
-  UniformityPuzzle, 
-  RippleEffectScenario, 
-  FeatureRequest 
-} from './components/visuals';
-
-
-
 
 type ContentPiece = {
   text: string;
@@ -71,6 +66,25 @@ const pagesData: PagesData = {
       Pragmatist: { text: "Remember working with file paths or DOM elements? You've already dealt with hierarchical data. We're just going to put a formal structure to it." }
     }
   },
+   4: {
+  title: "Chapter 4: Presenting the Composite Pattern",
+  content: {
+    Activist: { 
+      text: "Let’s dive in! Start by coding a simple example — create a Folder class that can hold Files or other Folders. Run it and see how one command like 'display()' works for both. Notice how everything behaves the same, whether it’s a single file or a group."
+    },
+    Theorist: { 
+      text: "The Composite Pattern allows individual objects and groups of objects to be treated uniformly. It includes three parts: Component (defines the interface), Leaf (individual item), and Composite (collection of items). This supports polymorphism and recursive design."
+    },
+    Reflector: { 
+      text: "Observe how the Composite Pattern simplifies client code. Before, you might have needed separate logic for single items and groups. Now, a common interface means you can loop over everything the same way. Think about why this reduces complexity."
+    },
+    // show an example image
+    Pragmatist: { 
+      text: "Here’s how you’d use it in real life — for example, a menu system where each menu can hold items or submenus. The same logic handles both cases, making updates and rendering much easier. This pattern directly applies to many UI or file management systems."
+    }
+  }
+},
+
 };
 
 function App() {
@@ -83,29 +97,32 @@ function App() {
   const prevPage = () => setPage((p) => Math.max(p - 1, 1));
 
   const currentPageData = pagesData[page]; 
-  
   const currentContent = currentPageData.content[learningStyle];
 
   return (
     <div className="app-container">
       <div className="page-container">
-        <div className={`arrow left ${page === 1 ? "disabled" : ""}`} onClick={prevPage}>←</div>
-        <LearningStyleSelector 
+        <div className={`arrow left ${page === 1 ? "disabled" : ""}`} onClick={prevPage}>
+          <ChevronLeft size={60} /> 
+        </div>
+
+        <h1 className="page-title">{currentPageData.title}</h1>
+
+        <LearningStyleSelector
         selectedStyle={learningStyle} 
         onStyleChange={setLearningStyle} 
         />
-        <Page title={currentPageData.title}>
-            <div>
-                <p>{currentContent.text}</p>
-                {currentContent.visual && (
-                    <div className="visual-aid-container">
-                        {currentContent.visual}
-                    </div>
-                )}
-            </div>
-        </Page>
-        <h2 className="page-number">Page {page} of {totalPages}</h2>
-        <div className={`arrow right ${page === totalPages ? "disabled" : ""}`} onClick={nextPage}>→</div>
+      
+      <div className='page-content'>
+          {currentContent.visual}
+          {/* {currentContent.text} */}
+      </div>
+       <ProgressBar progress={(page / totalPages) * 100} />
+
+        <div className={`arrow right ${page === totalPages ? "disabled" : ""}`} onClick={nextPage}>
+          <ChevronRight size={60} />
+        </div>
+
       </div>
     </div>
   );
