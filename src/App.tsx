@@ -78,7 +78,6 @@ const pagesData: PagesData = {
     Reflector: { 
       text: "Observe how the Composite Pattern simplifies client code. Before, you might have needed separate logic for single items and groups. Now, a common interface means you can loop over everything the same way. Think about why this reduces complexity."
     },
-    // show an example image
     Pragmatist: { 
       text: "Here’s how you’d use it in real life — for example, a menu system where each menu can hold items or submenus. The same logic handles both cases, making updates and rendering much easier. This pattern directly applies to many UI or file management systems."
     }
@@ -115,7 +114,12 @@ function App() {
       
       <div className='page-content'>
           {currentContent.visual}
-          {/* {currentContent.text} */}
+          
+           {page !== 1 && currentContent.text && (
+          <div className="text-block">
+            {currentContent.text}
+          </div>
+          )}
       </div>
        <ProgressBar progress={(page / totalPages) * 100} />
 

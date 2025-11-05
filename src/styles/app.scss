@@ -91,7 +91,6 @@ body, html, #root {
   overflow-y: auto;
 }
 
-
 // learning styles side bar
 .learning-style-selector {
   display: flex;
@@ -170,6 +169,23 @@ body, html, #root {
   background-color: #DDA853;
   transition: width 0.3s ease-in-out;
 }
+
+.text-block {
+  background-color: #eef2ff;
+  border: 1px solid #DDA853;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem auto;     
+  max-width: 600px;       
+  width: 100%;         
+  color: #183b4e;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;     
+}
+
 
 .visual-container {
   display: flex;
