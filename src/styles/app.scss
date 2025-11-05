@@ -5,12 +5,11 @@ body, html, #root {
   height: 100%;
   font-family: 'Inter', sans-serif;
   background-color:  #27548A;
-
-  // to be implemented
-  // background-image: url('/src/assets/background_image.png'); // to be changed
-  // background-repeat: repeat;   
-  // background-size: 200px 200px;
-  // background-position: center;
+  
+  background-image: url('/src/assets/tool1.png'); // can also use another image or tool2
+  background-repeat: repeat;   
+  background-size: 20px 20px;
+  background-position: center;
 }
 
 .app-container {
