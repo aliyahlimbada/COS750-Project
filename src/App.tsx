@@ -7,6 +7,7 @@ import { RippleEffectScenario } from "./components/RippleEffectScenario";
 import { FeatureRequest } from "./components/FeatureRequest";
 import ProgressBar from "./components/ProgressBar";
 import { ActivistsObjectives, PragmatistObjectives, ReflectorObjectives, TheoristObjectives } from "./components/Objectives";
+import { ActivistsRecall, PragmatistsRecall, ReflectorsRecall, TheoristsRecall } from "./components/Recall";
 import './styles/app.scss';
 
 type ContentPiece = {
@@ -73,10 +74,22 @@ const pagesData: PagesData = {
   3: {
     title: "Chapter 3: What Do You Already Know?",
     content: {
-      Activist: { text: "Quick quiz! What is a 'tree data structure'? Can you draw a simple one representing a folder with two files inside?" },
-      Theorist: { text: "Let's connect some dots. How does the concept of an 'interface' in object-oriented programming allow different classes to be treated similarly?" },
-      Reflector: { text: "Think back to a time you had to write code that handled a list of items, where some items were simple and others were groups. How did you manage that complexity?" },
-      Pragmatist: { text: "Remember working with file paths or DOM elements? You've already dealt with hierarchical data. We're just going to put a formal structure to it." }
+      Activist: { 
+        text: "Great! Now you remember polymorphism and tree structures!",
+        visual: <ActivistsRecall />
+      },
+      Theorist: { 
+        text: "You're all caught up on the basics of polymorphism and tree structures!",
+        visual: <TheoristsRecall />
+      },
+      Reflector: { 
+        text: "Think about your past experiences where polymorphism and tree like structures would have been beneficial.",
+        visual: <ReflectorsRecall />
+      },
+      Pragmatist: { 
+        text: "Notice how polymorphism is useful when working with tree like structures.",
+        visual: <PragmatistsRecall />
+      }
     }
   },
    4: {

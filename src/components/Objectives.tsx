@@ -21,7 +21,6 @@ export const TheoristObjectives = () => (
             <li>The <b>formal definition</b> and structure of the Composite design pattern.</li>
             <li>The distinct roles of the <b>Component, Leaf, and Composite</b> elements.</li>
             <li>The conceptual difference between <b>Aggregation and Composition</b> in UML and their impact on object lifetime.</li>
-            <li>The principles of <b>uniformity and transparency</b> that this pattern provides.</li>
           </ul>
     </div>
 );
@@ -32,8 +31,7 @@ export const ReflectorObjectives = () => (
           <ul>
             <li><b>Identify</b> the tell-tale signs of a system that would benefit from the Composite pattern.</li>
             <li><b>Observe</b> how a single, shared interface simplifies complex operations.</li>
-            <li><b>Consider</b> the long-term consequences of different memory management strategies.</li>
-            <li><b>Analyse</b> the trade-offs between client simplicity and object lifecycle safety.</li>
+            <li><b>Consider</b> when it is more appropriate to use the <b>aggregation</b> or the <b>composition</b> relationships.</li>
           </ul>
     </div>
 );
