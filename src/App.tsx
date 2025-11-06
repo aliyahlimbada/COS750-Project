@@ -6,6 +6,7 @@ import { UniformityPuzzle } from "./components/UniformityPuzzle";
 import { RippleEffectScenario } from "./components/RippleEffectScenario";
 import { FeatureRequest } from "./components/FeatureRequest";
 import ProgressBar from "./components/ProgressBar";
+import { ActivistsObjectives, PragmatistObjectives, ReflectorObjectives, TheoristObjectives } from "./components/Objectives";
 import './styles/app.scss';
 
 type ContentPiece = {
@@ -49,12 +50,24 @@ const pagesData: PagesData = {
   },
 
   2: {
-    title: "Chapter 2: Your Learning Goals",
+    title: "Chapter 2: Your Learning Objectives",
     content: {
-      Activist: { text: "By the end of this, you will be able to build a basic tree structure and add operations that work on every element in it." },
-      Theorist: { text: "You will understand the formal definition of the Composite pattern, its three core components (Component, Leaf, Composite), and how they relate to principles like polymorphism." },
-      Reflector: { text: "This lesson will guide you in observing and analyzing how the Composite pattern simplifies client code by creating a uniform interface for individual objects and collections." },
-      Pragmatist: { text: "You will learn how to apply the Composite pattern to solve practical problems involving part-whole hierarchies, like file systems or GUI components." }
+      Activist: { 
+        text: "By the end of this, you will be able to build a basic tree structure and add operations that work on every element in it.",
+        visual: <ActivistsObjectives />
+      },
+      Theorist: { 
+        text: "You will understand the formal definition of the Composite pattern, its three core components (Component, Leaf, Composite), and how they relate to principles like polymorphism.",
+        visual: <TheoristObjectives />
+      },
+      Reflector: { 
+        text: "This lesson will guide you in observing and analysing how the Composite pattern simplifies client code by creating a uniform interface for individual objects and collections.",
+        visual: <ReflectorObjectives />
+      },
+      Pragmatist: { 
+        text: "You will learn how to apply the Composite pattern to solve practical problems involving part-whole hierarchies, like file systems or GUI components.",
+        visual: <PragmatistObjectives />
+      }
     }
   },
   3: {
