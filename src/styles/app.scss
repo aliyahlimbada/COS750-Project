@@ -530,3 +530,101 @@ body, html, #root {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+
+// step 4 content
+.content-container {
+  padding: 1rem;
+  text-align: left;
+}
+
+// --- Shared styles for boxes/diagrams ---
+.box {
+  border: 2px solid #333;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  min-width: 180px;
+  
+  strong { display: block; margin-bottom: 0.5rem; }
+  p { margin: 0; }
+}
+
+.component { background-color: #fffbe6; border-color: #ffe58f; }
+.leaf { background-color: #e6f7ff; border-color: #91d5ff; }
+.composite { background-color: #f6ffed; border-color: #b7eb8f; }
+
+// --- Theorist Styles ---
+.formal-definition {
+  background-color: #f0f2f5;
+  border-left: 4px solid #ccc;
+  padding: 1rem;
+  margin: 1rem 0;
+  cite { display: block; text-align: right; margin-top: 0.5rem; font-style: italic; }
+}
+
+.conceptual-diagram.uml-svg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaves {
+  display: flex;
+  gap: 2rem;
+}
+
+.composite-wrapper {
+  position: relative;
+}
+
+.aggregation-line {
+  position: absolute;
+  // Play with these values!
+  top: -70px;   // How far down from the top of the Composite box?
+  left: 150px; // How far from the left of the Composite box?
+}
+
+// --- Activist Styles ---
+.activist-builder {
+  text-align: center;
+  .builder-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    button {
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      &:disabled { opacity: 0.5; cursor: not-allowed; }
+    }
+  }
+  .builder-diagram {
+    min-height: 200px; // Reserve space
+    .leaves { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+  }
+  .fade-in { animation: fadeIn 0.5s ease; }
+}
+
+// --- Reflector Styles ---
+.case-studies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .study {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 1.5rem;
+    border-radius: 8px;
+    h5 { margin-top: 0; }
+  }
+} 

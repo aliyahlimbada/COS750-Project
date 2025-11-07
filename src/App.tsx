@@ -9,6 +9,7 @@ import ProgressBar from "./components/ProgressBar";
 import { ActivistsObjectives, PragmatistObjectives, ReflectorObjectives, TheoristObjectives } from "./components/Objectives";
 import { ActivistsRecall, PragmatistsRecall, ReflectorsRecall, TheoristsRecall } from "./components/Recall";
 import './styles/app.scss';
+import { ActivistsContent, PragmatistsContent, ReflectorsContent, TheoristsContent } from "./components/PresentContent";
 
 type ContentPiece = {
   text: string;
@@ -96,16 +97,20 @@ const pagesData: PagesData = {
   title: "Chapter 4: Presenting the Composite Pattern",
   content: {
     Activist: { 
-      text: "Let’s dive in! Start by coding a simple example — create a Folder class that can hold Files or other Folders. Run it and see how one command like 'display()' works for both. Notice how everything behaves the same, whether it’s a single file or a group."
+      text: "Now, let’s dive in! Code our simple file management example — create a Folder class that can hold Files or other Folders. See how one command like 'display()' works for both. Notice how everything behaves the same, whether it’s a single file or a group.",
+      visual: <ActivistsContent />
     },
     Theorist: { 
-      text: "The Composite Pattern allows individual objects and groups of objects to be treated uniformly. It includes three parts: Component (defines the interface), Leaf (individual item), and Composite (collection of items). This supports polymorphism and recursive design."
+      text: "",
+      visual: <TheoristsContent />
     },
     Reflector: { 
-      text: "Observe how the Composite Pattern simplifies client code. Before, you might have needed separate logic for single items and groups. Now, a common interface means you can loop over everything the same way. Think about why this reduces complexity."
+      text: "Observe how the Composite Pattern simplifies client code. Before, you might have needed separate logic for single items and groups. Now, a common interface means you can loop over everything the same way. Think about why this reduces complexity.",
+      visual: <ReflectorsContent />
     },
     Pragmatist: { 
-      text: "Here’s how you’d use it in real life — for example, a menu system where each menu can hold items or submenus. The same logic handles both cases, making updates and rendering much easier. This pattern directly applies to many UI or file management systems."
+      text: "Observe how the Composite Pattern simplifies client code. Before, you might have needed separate logic for single items and groups. Now, a common interface means you can loop over everything the same way. Think about why this reduces complexity.",
+      visual: <PragmatistsContent />
     }
   }
 },
