@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { MultipleChoiceQuestion } from './MultipleChoiceQuestion';
 
-// A simple drag-and-drop sorting game
 const concepts = {
   Component: 'The Contract (Interface)',
   Leaf: 'The Individual Part',

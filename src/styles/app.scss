@@ -773,3 +773,118 @@ body, html, #root {
     &.incorrect { background-color: #f8d7da; }
   }
 }
+
+
+// event 6-8 stuff
+// Container for a full set of questions for an event
+.assessment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+
+  h4, h5 {
+    text-align: center;
+  }
+
+  .question-wrapper {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .scenario {
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .question-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+}
+
+// Select All That Apply Styles
+.sata-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  
+  .option-label {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    
+    input {
+      margin-right: 0.75rem;
+    }
+  }
+}
+
+// Fill in the Blank Styles
+.fitb-container {
+  font-size: 1.1rem;
+  line-height: 2;
+
+  .blank-input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 150px;
+    margin: 0 8px;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #007bff;
+    }
+  }
+}
+
+
+.check-answer-btn {
+  margin-top: 1rem;
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+// SATA Option states
+.sata-options .option-label {
+  &.correct { background-color: #d4edda; border-color: #c3e6cb; }
+  &.incorrect { background-color: #f8d7da; border-color: #f5c6cb; }
+}
+
+// FITB Input states
+.fitb-container .blank-input {
+  &.correct { border-bottom-color: #28a745; background-color: #f0fff4; }
+  &.incorrect { border-bottom-color: #dc3545; background-color: #fff0f1; }
+}
+
+// Feedback box (shared)
+.feedback {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  &.correct { background-color: #d4edda; }
+  &.incorrect { background-color: #f8d7da; }
+}

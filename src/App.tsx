@@ -11,6 +11,7 @@ import { ActivistsRecall, PragmatistsRecall, ReflectorsRecall, TheoristsRecall }
 import './styles/app.scss';
 import { ActivistsContent, PragmatistsContent, ReflectorsContent, TheoristsContent } from "./components/PresentContent";
 import { ActivistsGuidance, PragmatistsGuidance, ReflectorsGuidance, TheoristsGuidance } from "./components/Guidance";
+import { ReflectorsPerformance, TheoristsPerformance } from "./components/Performance";
 
 type ContentPiece = {
   text: string;
@@ -137,6 +138,27 @@ const pagesData: PagesData = {
     }
   },
 
+  6: {
+    title: "Chapter 6: Put It Into Practice",
+    content: {
+      Activist: { 
+        text: "Coming soon...",
+        // visual: <ActivistsPerformance />
+      },
+      Theorist: { 
+        text: "",
+        visual: <TheoristsPerformance />
+      },
+      Reflector: { 
+        text: "",
+        visual: <ReflectorsPerformance />
+      },
+      Pragmatist: { 
+        text: "Coming soon...",
+        // visual: <PragmatistsPerformance />
+      }
+    }
+  },
 };
 
 function App() {
