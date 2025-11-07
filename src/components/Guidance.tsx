@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MultipleChoiceQuestion } from './MultipleChoiceQuestion';
 
 // A simple drag-and-drop sorting game
 const concepts = {
@@ -63,101 +64,145 @@ export const ActivistsGuidance = () => {
   );
 };
 
-export const TheoristsGuidance = () => (
-  <div className="guidance-container framework">
-    <h3>Conceptual Framework & Mnemonics</h3>
-    
-    <div className="guidance-section">
-      <h4>Mnemonic: The Three "C"s</h4>
-      <ul>
-        <li><strong>Component:</strong> The <strong>C</strong>ontract (The abstract interface).</li>
-        <li><strong>Leaf:</strong> The basic <strong>C</strong>omponent (The individual object).</li>
-        <li><strong>Composite:</strong> The <strong>C</strong>ontainer (The object that holds others).</li>
-      </ul>
-    </div>
+const TheoristQuestions = [
+  {
+    question: "In a UML diagram, which symbol represents Composition (strong ownership), where the child's lifetime is tied to the parent?",
+    options: ['◇ (Hollow Diamond)', '◆ (Solid Diamond)', '△ (Triangle Arrow)', '→ (Simple Arrow)'],
+    correctAnswerIndex: 1,
+    feedback: "The solid diamond (◆) signifies Composition, meaning the part cannot exist without the whole. The hollow diamond (◇) signifies Aggregation."
+  },
+  {
+    question: "What is the primary role of the 'Component' in the Composite pattern?",
+    options: [
+      'To hold a list of child objects.',
+      'To implement the final, concrete operation.',
+      'To declare a common interface for all objects in the tree.',
+      'To manage the memory of the Leaf objects.'
+    ],
+    correctAnswerIndex: 2,
+    feedback: "The Component acts as a contract. It defines the set of operations (like getSize()) that both individual Leaves and container Composites must implement."
+  },
+  {
+    question: "Which among the following best describes polymorphism?",
+    options: ['It is the ability for a message/data to be processed in more than one form', 'It is the ability for a message/data to be processed in only 1 form', 'It is the ability for many messages/data to be processed in one way', 'It is the ability for undefined message/data to be processed in at least one way'],
+    correctAnswerIndex: 0,
+    feedback: "The word polymorphism indicates many-forms. So if a single entity takes more than one form, it is known as polymorphism."
+  }
+];
 
-    <div className="guidance-section">
-      <h4>Distinguishing Part-Whole Relationships</h4>
-      <p>The key difference between Aggregation and Composition lies in the strength of ownership and object lifetime.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Concept</th>
-            <th>Aggregation (Shared)</th>
-            <th>Composition (Owned)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Symbol</strong></td>
-            <td>Hollow Diamond ◇</td>
-            <td>Solid Diamond ◆</td>
-          </tr>
-          <tr>
-            <td><strong>Lifetime</strong></td>
-            <td>Children can outlive the parent.</td>
-            <td>Children are destroyed with the parent.</td>
-          </tr>
-          <tr>
-            <td><strong>Relationship</strong></td>
-            <td>"Has-a" (Weak reference)</td>
-            <td>"Is-part-of" (Strong ownership)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+export const TheoristsGuidance = () => (
+  <div className="multi-question-container">
+    {TheoristQuestions.map((q, index) => (
+      <MultipleChoiceQuestion
+        key={index}
+        question={q.question}
+        options={q.options}
+        correctAnswerIndex={q.correctAnswerIndex}
+        feedback={q.feedback}
+      />
+    ))}
   </div>
 );
+
+
+const ReflectorQuestions = [
+  {
+    question: "You are reviewing code for a graphics editor. You notice that Circles, Squares, and Groups_of_Shapes all share a `draw()` method. What design concept does this shared interface primarily promote?",
+    options: [
+      'It ensures the code runs as fast as possible.',
+      'It allows the client to treat individual and grouped shapes uniformly.',
+      'It makes the code harder for new developers to understand.',
+      'It forces every shape to have a color property.'
+    ],
+    correctAnswerIndex: 1,
+    feedback: "The goal is uniformity. By sharing an interface, the client code that calls draw() doesn't need to know or care if it's dealing with a single shape or a complex group. This is the Composite design pattern at work!"
+  },
+  {
+    question: "Consider a system for a restaurant menu. A MenuItem (like Fries) is a Leaf. A MenuCategory (like Appetizers) is a Composite. Why would it be a poor design choice to add a method like getIngredients() only to the MenuItem class?",
+    options: [
+      'Because MenuCategory should not know about ingredients.',
+      'Because all operations should only exist on the Composite.',
+      'Because it would make the MenuItem class too large.',
+      'Because it violates the principle of uniformity; the client could no longer treat all components the same way.'
+    ],
+    correctAnswerIndex: 3,
+    feedback: "Adding operations to only the Leaf breaks the pattern. The client loses the ability to treat all components uniformly and would need to start checking the type of an object before calling getIngredients(), reintroducing complexity."
+  },
+  {
+    question: "When observing a new system, what is the clearest sign that the Composite pattern might be a beneficial addition?",
+    options: [
+      'The code uses too many classes.',
+      'The client code is full of `if (item is Group)` or `instanceof` checks before performing an action.',
+      'The system is running too slowly.',
+      'The database schema is too complex.'
+    ],
+    correctAnswerIndex: 1,
+    feedback: "That branching logic (`if/else` based on type) is the classic problem the Composite pattern solves. It indicates that the system is trying to handle individual and group objects differently, when it could be treating them uniformly."
+  }
+];
+
 
 export const ReflectorsGuidance = () => (
-  <div className="guidance-container analogies">
-    <h3>Thinking in Analogies</h3>
-
-    <div className="guidance-section">
-      <h4>Analogy: A Set of Russian Nesting Dolls</h4>
-      <p>Think of the whole pattern as a set of nesting dolls. The outermost doll is a Composite. The innermost, solid doll is a Leaf. But what is the Component? It's the very idea of "doll-ness" itself—the fact that you can perform the same action (like weighing it or painting it) on any doll, whether it's a container or the final piece.</p>
-    </div>
-
-    <div className="guidance-section">
-      <h4>Comparing Ownership: Two Management Styles</h4>
-      <div className="comparison">
-        <div className="side">
-          <h5>Aggregation ◇ (The Consultant)</h5>
-          <p>A manager (the Client) assembles a temporary team for a project. The team members (children) report to the manager, but they don't "belong" to them. When the project is over, the team disbands, but the members still exist and can be assigned to other projects.</p>
-        </div>
-        <div className="side">
-          <h5>Composition ◆ (The Department Head)</h5>
-          <p>A Department Head (the Composite) is responsible for their entire department. The employees (children) are part of that department. If the entire department is dissolved, the employees' roles within it are also eliminated.</p>
-        </div>
-      </div>
-    </div>
+  <div className="multi-question-container">
+    {ReflectorQuestions.map((q, index) => (
+      <MultipleChoiceQuestion
+        key={index} 
+        question={q.question}
+        options={q.options}
+        correctAnswerIndex={q.correctAnswerIndex}
+        feedback={q.feedback}
+      />
+    ))}
   </div>
 );
 
+
+const PragmatistQuestions = [
+  {
+    question: "You are building the product categories feature for an e-commerce site. For performance, you decide that a Product can be listed in multiple Categories. What UML relationship and ownership model must you use?",
+    options: [
+      'Composition (◆), because a category owns its products.',
+      'Aggregation (◇), because the products have a shared lifetime and should not be deleted when one category is removed.',
+      'Inheritance (△), because a product is a type of category.',
+      'Composition (◆), because it is always the safest option.'
+    ],
+    correctAnswerIndex: 1,
+    feedback: "This is the classic use-case for Aggregation. Since a product can exist in multiple categories (and should not be deleted if one of those categories is), it has a shared, independent lifetime. Aggregation (◇) correctly models this weak 'has-a' relationship."
+  },
+  {
+    question: "What is the most immediate and practical benefit of using the Composite pattern in a team project?",
+    options: [
+      'It guarantees the program will have no bugs.',
+      'It makes the code run 50% faster.',
+      'It reduces client-side complexity, making the code easier for other developers to use and extend.',
+      'It automatically saves your data to a file.'
+    ],
+    correctAnswerIndex: 2,
+    feedback: "The primary practical benefit is for the client developer. They don't have to write complex logic to handle different object types, which makes the system easier to work with, less prone to bugs, and faster to extend with new features."
+  },
+  {
+    question: "You've implemented a file system using Composition (◆), where Folders own their children. What happens if the client code keeps a reference to a File object, and then the parent Folder is deleted?",
+    options: [
+      'The file will be automatically moved to the root directory.',
+      'Nothing, the file will continue to exist safely.',
+      'The clients reference now points to deleted memory (a dangling pointer), which will cause bugs or crashes if used.',
+      'The program will ask the user for confirmation before deleting.'
+    ],
+    correctAnswerIndex: 2,
+    feedback: "This is the key trade-off of Composition. The parent's destructor deletes the child, but it cannot update external references. The client code is now holding a 'stale' reference, and trying to use it can lead to undefined behavior or crashes. This is why clear documentation and API contracts are crucial."
+  }
+];
+
 export const PragmatistsGuidance = () => (
-  <div className="guidance-container cheatsheet">
-    <h3>Developer's Cheatsheet: Using Composite</h3>
-
-    <div className="guidance-section">
-      <h4>Rule of Thumb: When should I use this pattern?</h4>
-      <p>Use the Composite pattern when you hear the phrase: <strong>"I need to treat a group of things the same way I treat one of those things."</strong> Consider the following real-world applications:</p>
-      <ul>
-        <li>Calculating the total size of files and folders.</li>
-        <li>Rendering a complex UI with nested panels and buttons.</li>
-        <li>Finding the total cost of products and bundled "box sets".</li>
-      </ul>
-    </div>
-
-    <div className="guidance-section">
-      <h4>Decision Guide: Who should delete the children? (Ownership)</h4>
-      <p>This is the most common bug-prone area. Follow this simple rule:</p>
-      <div className="decision-flow">
-        <span>Does the parent exclusively own its children? (e.g., A Document's Sections)</span>
-        <div className="arrow-down">↓</div>
-        <div className="choice yes"><strong>YES:</strong> Use <strong>Composition (Solid Diamond ◆)</strong>. The parent deletes the children. This is safer and prevents memory leaks. <strong>(Default choice)</strong></div>
-        <div className="arrow-down">↓</div>
-        <div className="choice no"><strong>NO:</strong> Use <strong>Aggregation (Hollow Diamond ◇)</strong>. The client/creator deletes the children. Use this if children must be shared or outlive their parent.</div>
-      </div>
-    </div>
+  <div className="multi-question-container">
+    {PragmatistQuestions.map((q, index) => (
+      <MultipleChoiceQuestion
+        key={index} 
+        question={q.question}
+        options={q.options}
+        correctAnswerIndex={q.correctAnswerIndex}
+        feedback={q.feedback}
+      />
+    ))}
   </div>
 );
