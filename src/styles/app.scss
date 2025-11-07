@@ -628,3 +628,104 @@ body, html, #root {
     h5 { margin-top: 0; }
   }
 } 
+
+
+// step 5 stuff
+.guidance-container {
+  padding: 1rem;
+  text-align: left;
+  
+  h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .guidance-section {
+    margin-bottom: 2rem;
+    h5 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+// Pragmatist Cheatsheet
+.cheatsheet {
+  .decision-flow {
+    text-align: center;
+    .arrow-down { font-size: 1.5rem; color: #aaa; }
+    .choice {
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      border: 1px solid;
+      &.yes { background-color: #f6ffed; border-color: #b7eb8f; }
+      &.no { background-color: #fffbe6; border-color: #ffe58f; }
+    }
+  }
+}
+
+// Theorist Framework
+.framework table {
+  width: 100%;
+  border-collapse: collapse;
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: center;
+  }
+  th { background-color: #f8f9fa; }
+}
+
+// Reflector Analogies
+.analogies .comparison {
+  display: flex;
+  gap: 1.5rem;
+  .side {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+  }
+}
+
+// Activist Sorting Game
+.sorting-game {
+  .game-board {
+    display: flex;
+    gap: 2rem;
+  }
+  .definitions {
+    flex: 2;
+  }
+  .terms {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .drop-zone {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    transition: all 0.2s;
+    &.solved {
+      background-color: #b7eb8f;
+      border-style: solid;
+      color: #333;
+    }
+  }
+  .draggable {
+    padding: 0.75rem 1.5rem;
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 20px;
+    cursor: grab;
+    margin-bottom: 0.5rem;
+  }
+  .win-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}

@@ -10,6 +10,7 @@ import { ActivistsObjectives, PragmatistObjectives, ReflectorObjectives, Theoris
 import { ActivistsRecall, PragmatistsRecall, ReflectorsRecall, TheoristsRecall } from "./components/Recall";
 import './styles/app.scss';
 import { ActivistsContent, PragmatistsContent, ReflectorsContent, TheoristsContent } from "./components/PresentContent";
+import { ActivistsGuidance, PragmatistsGuidance, ReflectorsGuidance, TheoristsGuidance } from "./components/Guidance";
 
 type ContentPiece = {
   text: string;
@@ -114,6 +115,27 @@ const pagesData: PagesData = {
     }
   }
 },
+5: {
+    title: "Chapter 5: Making It Stick",
+    content: {
+      Activist: { 
+        text: "",
+        visual: <ActivistsGuidance />
+      },
+      Theorist: { 
+        text: "",
+        visual: <TheoristsGuidance />
+      },
+      Reflector: { 
+        text: "",
+        visual: <ReflectorsGuidance />
+      },
+      Pragmatist: { 
+        text: "",
+        visual: <PragmatistsGuidance />
+      }
+    }
+  },
 
 };
 
