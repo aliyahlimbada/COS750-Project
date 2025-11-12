@@ -1,20 +1,38 @@
 import { useState, type JSX } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import LearningStyleSelector, { type LearningStyle } from "./components/LearningStyleSelector";
-import { InteractiveFileSystem } from "./components/InteractiveFileSystem";
-import { UniformityPuzzle } from "./components/UniformityPuzzle";
-import { RippleEffectScenario } from "./components/RippleEffectScenario";
-import { FeatureRequest } from "./components/FeatureRequest";
 import ProgressBar from "./components/ProgressBar";
-import { ActivistsObjectives, PragmatistObjectives, ReflectorObjectives, TheoristObjectives } from "./components/Objectives";
-import { ActivistsRecall, PragmatistsRecall, ReflectorsRecall, TheoristsRecall } from "./components/Recall";
 import './styles/app.scss';
+
+// 1. Attention
+import { InteractiveFileSystem } from "./components/1_Attention/InteractiveFileSystem";
+import { UniformityPuzzle } from "./components/1_Attention/UniformityPuzzle";
+import { RippleEffectScenario } from "./components/1_Attention/RippleEffectScenario";
+import { FeatureRequest } from "./components/1_Attention/FeatureRequest";
+
+// 2. Objectives
+import { ActivistsObjectives } from "./components/2_Objectives/ActivistObjectives";
+import { TheoristObjectives } from "./components/2_Objectives/TheoristObjectives";
+import { ReflectorObjectives } from "./components/2_Objectives/ReflectorObjectives";
+import { PragmatistObjectives } from "./components/2_Objectives/PragmatistObjectives";
+
+// 3. Recall
+import { ActivistsRecall } from "./components/3_Recall/ActivistsRecall";
+import { PragmatistsRecall } from "./components/3_Recall/PragmatistsRecall";
+import { ReflectorsRecall } from "./components/3_Recall/ReflectorsRecall";
+import { TheoristsRecall } from "./components/3_Recall/TheoristsRecall";
+
+// 4. Content
 import { ActivistsContent, PragmatistsContent, ReflectorsContent, TheoristsContent } from "./components/PresentContent";
+
+// 5. Guidance
 import { ActivistsGuidance, PragmatistsGuidance, ReflectorsGuidance, TheoristsGuidance } from "./components/Guidance";
+
+// 6. Performance
 import { ReflectorsPerformance, TheoristsPerformance } from "./components/Performance";
 
 type ContentPiece = {
-  text: string;
+  text?: string;
   visual?: JSX.Element; 
 };
 
@@ -29,25 +47,20 @@ type PagesData = {
   };
 };
 
-// for the pages, add the others (4-8/9)
 const pagesData: PagesData = {
   1: {
     title: "Chapter 1: The File System Challenge",
     content: {
       Activist: { 
-        text: "Your mission: Calculate the total size of the 'root' folder. The total size of a folder is the sum of everything inside it.", 
         visual: <InteractiveFileSystem /> 
       },
       Theorist: { 
-        text: "An object is either a single unit or a collection of units. How can we write code that doesn't care which it is?", 
         visual: <UniformityPuzzle /> 
       },
       Reflector: { 
-        text: "A good design decision today can save countless hours tomorrow. Consider the downstream effects of how you choose to represent files and folders.", 
         visual: <RippleEffectScenario /> 
       },
       Pragmatist: { 
-        text: "A user needs to see the total size of their selection. This feature must work flawlessly whether one file, one folder, or a mix of both are selected. Consider how you would build the following system.", 
         visual: <FeatureRequest /> 
       }
     }
@@ -57,19 +70,15 @@ const pagesData: PagesData = {
     title: "Chapter 2: Your Learning Objectives",
     content: {
       Activist: { 
-        text: "By the end of this, you will be able to build a basic tree structure and add operations that work on every element in it.",
         visual: <ActivistsObjectives />
       },
       Theorist: { 
-        text: "You will understand the formal definition of the Composite pattern, its three core components (Component, Leaf, Composite), and how they relate to principles like polymorphism.",
         visual: <TheoristObjectives />
       },
       Reflector: { 
-        text: "This lesson will guide you in observing and analysing how the Composite pattern simplifies client code by creating a uniform interface for individual objects and collections.",
         visual: <ReflectorObjectives />
       },
       Pragmatist: { 
-        text: "You will learn how to apply the Composite pattern to solve practical problems involving part-whole hierarchies, like file systems or GUI components.",
         visual: <PragmatistObjectives />
       }
     }
@@ -189,12 +198,6 @@ function App() {
       
       <div className='page-content'>
           {currentContent.visual}
-          
-           {page !== 1 && currentContent.text && (
-          <div className="text-block">
-            {currentContent.text}
-          </div>
-          )}
       </div>
        <ProgressBar progress={(page / totalPages) * 100} />
 

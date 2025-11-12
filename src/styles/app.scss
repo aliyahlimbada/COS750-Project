@@ -81,13 +81,14 @@ body, html, #root {
   position: relative;
   flex: 1;
   padding: 20px;
-  background-color: #ffffff;
   color: #183b4e;
   margin-top: 80px;
   height: 80%;
   border-radius: 12px;
   max-width: 700px;
-  overflow-y: auto;
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center;     /* Vertical center */
 }
 
 // learning styles side bar
@@ -193,6 +194,9 @@ body, html, #root {
   gap: 1.25rem;
   padding: 1.5rem;
   color: #183B4E;
+  // height: 500px;
+  // overflow-y: auto;
+
 
   .visual-title {
     text-align: center;
@@ -203,24 +207,26 @@ body, html, #root {
     }
 
     p {
-      font-size: 1rem;
+      font-size: 15px;
       color: #555;
-      max-width: 600px;
-      margin: 0 auto;
     }
   }
 
   // Interactive file system - Activist
-  .interactive-file-system {
-    width: 100%;
-    max-width: 650px;
-    border: 1px solid #DDA853;
-    border-radius: 1rem;
-    padding: 1rem 1.25rem;
-    background-color: #f9fafb;
-    font-family: monospace;
-    text-align: left;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+ .interactive-file-system {
+  width: 665px;
+  border: 1px solid #DDA853;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #f9fafb;
+  font-family: monospace;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  display: flex;         
+  flex-direction: column; 
+  gap: 20px;             
+
 
     h4 {
       margin: 0.5rem 0 1rem 0;
@@ -228,6 +234,13 @@ body, html, #root {
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       color: #555;
+    }
+
+    .interactive-folders{
+      background-color: #eef2ff;
+      border-left: 4px solid #6366f1;
+      padding: 10px;
+      border-radius: 0.5rem;
     }
 
     .node {
@@ -338,6 +351,29 @@ body, html, #root {
     }
   }
 }
+
+  .puzzle-question {
+    background-color: #eef2ff;
+    border-left: 4px solid #6366f1;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    color: #1f2937;
+    line-height: 1.6;
+
+    strong {
+      color: #183B4E;
+    }
+
+    code {
+      font-family: 'Fira Code', monospace;
+      background-color: #e5e7eb;
+      padding: 0 4px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: #005a9e;
+    }
+  }
 
 // ripple effect scenario - reflector
 .ripple-effect-scenario {

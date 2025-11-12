@@ -1,4 +1,4 @@
-import '../styles/app.scss'; 
+import '../../styles/app.scss';
 
 export const RippleEffectScenario = () => (
   <div className="visual-container">

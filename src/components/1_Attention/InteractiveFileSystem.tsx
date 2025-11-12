@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import '../styles/app.scss'
+import '../../styles/app.scss';
 
 const fileSystemData = {
   name: 'MyDocuments',
@@ -83,20 +83,25 @@ const FileSystemNode: React.FC<{ node: FileSystemNodeData; depth?: number }> = (
 
 export const InteractiveFileSystem = () => (
   <div className="visual-container">
+    
+    <div className="interactive-file-system">
+
+    
     <div className="visual-title">
       <h2>Your mission:</h2>
       <p>
         Calculate the total size of the <strong>'root'</strong> folder.
       </p>
        <p>
-        The total size of a folder is the sum of everything inside it.
+        The total size of a folder is the sum of everything inside it. The total size of a folder is the sum of everything inside it. 
       </p>
     </div>
 
-    <div className="interactive-file-system">
+    <div className='interactive-folders'>
       <h4>Click on folders to expand or collapse</h4>
       <FileSystemNode node={fileSystemData} />
     </div>
+  </div>
   </div>
 //   add something to fill the space i.e click here to view the answer
 );
