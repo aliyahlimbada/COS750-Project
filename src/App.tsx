@@ -23,7 +23,10 @@ import { ReflectorsRecall } from "./components/3_Recall/ReflectorsRecall";
 import { TheoristsRecall } from "./components/3_Recall/TheoristsRecall";
 
 // 4. Content
-import { ActivistsContent, PragmatistsContent, ReflectorsContent, TheoristsContent } from "./components/PresentContent";
+import { ActivistsContent } from "./components/4_Content/ActivistContent";
+import { PragmatistsContent } from "./components/4_Content/PragmatistsContent";
+import { ReflectorsContent } from "./components/4_Content/ReflectorsContent";
+import { TheoristsContent } from "./components/4_Content/TheoristsContent";
 
 // 5. Guidance
 import { ActivistsGuidance, PragmatistsGuidance, ReflectorsGuidance, TheoristsGuidance } from "./components/Guidance";
