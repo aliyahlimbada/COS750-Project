@@ -29,10 +29,14 @@ import { ReflectorsContent } from "./components/4_Content/ReflectorsContent";
 import { TheoristsContent } from "./components/4_Content/TheoristsContent";
 
 // 5. Guidance
-import { ActivistsGuidance, PragmatistsGuidance, ReflectorsGuidance, TheoristsGuidance } from "./components/Guidance";
+import { ActivistsGuidance } from "./components/5_Guidance/ActivistsGuidance";
+import { PragmatistsGuidance } from "./components/5_Guidance/PragmatistsGuidance";
+import { ReflectorsGuidance } from "./components/5_Guidance/ReflectorsGuidance";
+import { TheoristsGuidance } from "./components/5_Guidance/TheoristsGuidance";
 
 // 6. Performance
-import { ReflectorsPerformance, TheoristsPerformance } from "./components/Performance";
+import { ReflectorsPerformance } from "./components/6_Performance/ReflectorsPerformance";
+import { TheoristsPerformance } from "./components/6_Performance/TheoristsPerformance";
 
 type ContentPiece = {
   text?: string;
@@ -167,7 +171,6 @@ const pagesData: PagesData = {
       },
       Pragmatist: { 
         text: "Coming soon...",
-        // visual: <PragmatistsPerformance />
       }
     }
   },
