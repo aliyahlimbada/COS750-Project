@@ -57,15 +57,17 @@ int main() {
 `;
 
 export const PragmatistsContent = () => (
-       <div className="visual-container">
-    <div className="feature-request-ticket">
-  <div className="content-container">
-    <h4>The Practical Code Solution</h4>
-    <p>Let's solve the feature request from earlier. Here is an implementation in C++. The comments explain the role of each part.</p>
-    <div className="code-prompt">
-      <pre><code>{codeImplementation.trim()}</code></pre>
+    <div className="visual-container">
+        <div className="feature-request-ticket">
+            <div className="content-container">
+                <h4>The Practical Code Solution</h4>
+                <p>Let's solve the feature request from earlier. Here is an implementation in C++. The comments explain the role of each part.</p>
+                <div className="code-prompt">
+                    <div className="code-blocks-puzzle">
+                        <pre><code>{codeImplementation.trim()}</code></pre>
+                    </div>
+                </div>
+            </div>
+         </div>
     </div>
-  </div>
-  </div>
-  </div>
 );

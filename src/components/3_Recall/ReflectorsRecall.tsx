@@ -4,7 +4,10 @@ import '../../styles/app.scss';
 export const ReflectorsRecall = () => (
   <div className="visual-container">
     <div className="feature-request-ticket">
-    <h4>Let's take a moment to look back on your own experiences.</h4>
+    <h3 className="visual-title">Let's take a moment to look back on your own experiences.</h3>
+    <p className="puzzle-question">
+      Think about your past experiences where polymorphism and tree like structures would have been beneficial
+    </p>
     <RevealableAnswer
       question={
         <p>Think about a past project involving a hierarchy (UI views, categories, documents). How did you manage "parent-child" relationships? What was it like to perform an operation on both individual items and their containers?</p>

@@ -4,7 +4,8 @@ import '../../styles/app.scss';
 export const ActivistsRecall = () => (
   <div className="visual-container">
     <div className="feature-request-ticket">
-    <h4>Quick warm-up! Let's get the fingers moving.</h4>
+    <h3 className="visual-title">Do you remember polymorphism and tree structures?</h3>
+
     <RevealableAnswer
       question={
         <p>Imagine an array of shapes. All have a <code>draw()</code> method. Can you write a loop to call <code>draw()</code> on every shape?</p>

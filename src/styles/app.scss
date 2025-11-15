@@ -331,7 +331,7 @@ body, html, #root {
 
   .puzzle-question {
     background-color: #eef2ff;
-    border-left: 4px solid #6366f1;
+    border-left: 4px solid #9091a7;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     font-size: 0.95rem;
@@ -483,7 +483,6 @@ body, html, #root {
 .feature-request-ticket {
   width: 100%;
   max-width: 650px;
-  // height: 100%;
   border: 1px solid #DDA853;
   border-radius: 1rem;
   background-color: #f9fafb;
@@ -493,6 +492,7 @@ body, html, #root {
   font-family: 'Inter', sans-serif;
   color: #183B4E;
   overflow-y: auto;
+  max-height: 600px;
 
   .ticket-body {
     display: flex;
@@ -527,11 +527,13 @@ body, html, #root {
   }
 }
 }
-
 // revealable answer
 .revealable-container {
   margin-top: 1.5rem;
   text-align: left;
+   background-color: #eef2ff;
+    padding: 1.5rem;
+    border-radius: 8px;
 
   .question-content {
     margin-bottom: 1rem;
@@ -574,7 +576,8 @@ body, html, #root {
 
 // step 4 content
 .content-container {
-  padding: 1rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-align: left;
   max-height: 600px;
 }
@@ -968,3 +971,24 @@ body, html, #root {
     &.incorrect { background-color: #f8d7da; }
   }
 }
+
+  .code-blocks-puzzle {
+    background-color: #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    border: 1px solid #e0e0e0;
+
+    pre {
+      margin: 0.25rem 0;
+      color: #1f2937;
+    }
+
+    code {
+      color: #005a9e;
+    }
+  }
+
+

@@ -4,7 +4,7 @@ import '../../styles/app.scss';;
 export const PragmatistsRecall = () => (
   <div className="visual-container">
     <div className="feature-request-ticket">
-    <h4>Let's look at a common, messy problem that needs a better solution.</h4>
+    <h3 className="visual-title">Let's look at a common, messy problem that needs a better solution.</h3>
     <RevealableAnswer
       question={
         <div className="code-prompt">
@@ -42,6 +42,9 @@ export const PragmatistsRecall = () => (
         <p>The open diamond is the <strong>aggregation</strong> relationship which is a "has-a" relationship. <br></br>The filled diamond is the <strong>composition</strong> relationship which is "owns-a" relationship.</p>
     }
     />
+      <p className="puzzle-question">
+          Notice how polymorphism is useful when working with tree like structures.
+    </p>
       </div>
   </div>
 );

@@ -76,7 +76,7 @@ export const ReflectorsPerformance = () => {
       <div className="feature-request-ticket">
         <div className="assessment-container">
           <div className="question-wrapper" style={{ minHeight: "400px" }}>
-            <h5>{currentQuestion.title}</h5>
+            <h3>{currentQuestion.title}</h3>
             {currentQuestion.scenario && currentQuestion.scenario}
             {currentQuestion.component}
           </div>

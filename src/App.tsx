@@ -94,15 +94,12 @@ const pagesData: PagesData = {
     title: "Chapter 3: What Do You Already Know?",
     content: {
       Activist: { 
-        text: "Great! Now you remember polymorphism and tree structures!",
         visual: <ActivistsRecall />
       },
       Theorist: { 
-        text: "You're all caught up on the basics of polymorphism and tree structures!",
         visual: <TheoristsRecall />
       },
       Reflector: { 
-        text: "Think about your past experiences where polymorphism and tree like structures would have been beneficial.",
         visual: <ReflectorsRecall />
       },
       Pragmatist: { 

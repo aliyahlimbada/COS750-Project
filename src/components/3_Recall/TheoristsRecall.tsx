@@ -4,7 +4,7 @@ import '../../styles/app.scss';
 export const TheoristsRecall = () => (
   <div className="visual-container">
     <div className="feature-request-ticket">
-    <h4>Let's revisit some foundational principles.</h4>
+    <h3 className="visual-title">Let's revisit some foundational principles.</h3>
     <RevealableAnswer
       question={
        <p>What is the primary purpose of an <strong>abstract class</strong>?</p>
@@ -37,6 +37,9 @@ export const TheoristsRecall = () => (
           <p><strong>Aggregation</strong> is a <strong>"has-a"</strong> relationship where the part can exist independently from the whole (for example, a school has teachers).<br></br> <strong>Composition</strong> is a <strong>"owns-a"</strong> relationship where the part cannot exist without the whole (for example, a house has rooms).</p>
         }
     />
+     {/* <p className="puzzle-question">
+        You should be all caught up on the basics of polymorphism and tree structures now!           
+    </p> */}
   </div>
   </div>
 );
