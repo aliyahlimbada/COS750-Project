@@ -877,15 +877,15 @@ line-height: 2;
   width: 150px;
   margin: 0 8px;
 }
-
-
 .check-answer-btn {
+  display: flex;
+  align-items: center;
   margin-top: 1rem;
   padding: 10px 25px;
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  background-color: #007bff;
+  background-color: #DDA853;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -945,7 +945,7 @@ line-height: 2;
 
 .nav-btn {
   background-color: #DDA853;
-  color: #fff;
+  color: #27548a;
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -955,6 +955,7 @@ line-height: 2;
 
 .nav-btn:hover:not(:disabled) {
   background-color: #285a74;
+  color: white;
 }
 
 .nav-btn:disabled {
