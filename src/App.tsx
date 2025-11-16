@@ -178,7 +178,7 @@ const pagesData: PagesData = {
   },
 
   7: {
-    title: "Chapter 8: Final Challenge - The Pizza Builder",
+    title: "Chapter 7: Final Challenge - The Pizza Builder",
     content: {
       Activist: { text: "", visual: <Assessment/> }, // Placeholder
       Theorist: { text: "", visual: <Assessment />},

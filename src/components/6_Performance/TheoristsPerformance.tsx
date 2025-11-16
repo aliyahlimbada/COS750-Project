@@ -45,7 +45,7 @@ export const TheoristsPerformance = () => {
     },
     {
       type: "mcq-group",
-      title: "Reflector Question 3 (Multiple Choice Series)",
+      title: "Theorist Question 3 (Multiple Choice Series)",
       scenario: (
         <div className="scenario">
           <strong>Scenario:</strong> Consider these two possible designs for a graphics system:
@@ -91,6 +91,64 @@ export const TheoristsPerformance = () => {
             feedback="Only Design A allows recursive composition because Group references Shape (which Group also is)."
           />
         </>
+      ),
+    },
+    {
+      type: "mcq-group",
+      title: "Theorist Question 4 (Multiple Choice)",
+      scenario: (
+        <div className="scenario">
+          <strong>Scenario:</strong> A software architect proposes using the Composite pattern for a university course registration system where:
+          <ul>
+            <li>Individual courses are Leaf node;</li>
+            <li>Course bundles (e.g., "First Year Engineering Package") are Composite nodes;</li>
+            <li>Students can register for individual courses OR entire bundles.</li>
+          </ul>
+          <p>The architect states: "We need <code>register(Student s)</code> and <code>calculateTotalCredits()</code> operations. I'll put <code>register()</code> in the Component interface but <code>calculateTotalCredits()</code> only in Composite since only bundles need to sum credits."</p>
+        </div>
+      ),
+      component: (
+        <MultipleChoiceQuestion
+          question="Analyse this design decision. What fundamental principle of the Composite pattern does this violate?"
+          options={[
+            "A. It violates the part-whole hierarchy principle - operations should only be in Composite",
+            "B. It violates uniform treatment - clients cannot treat Leaf and Composite identically through the Component interface",
+            "C. It violates the tree structure principle - all operations must use recursion",
+            "D. This design is correct - operations should only be placed where they're needed",
+          ]}
+          correctAnswerIndex={1}
+          feedback="By placing calculateTotalCredits() only in Composite breaks uniform treatment."
+        />
+      ),
+    },
+    {
+      type: "mcq-group",
+      title: "Theorist Question 5 (Multiple Choice)",
+      scenario: (
+        <div className="scenario">
+          <strong>Scenario:</strong> A team implements a file system hierarchy using the Composite pattern:
+          <ul>
+            <li>Component: FileSystemElement;</li>
+            <li>Leaf: File;</li>
+            <li>Composite: Folder.</li>
+          </ul>
+          <p>After deployment, they realise users frequently need to "search for all files of type X" throughout the hierarchy. The team debates solutions:</p>
+          <p><strong>Solution 1:</strong> Add <pre><code>{`search(String type): List<File>`}</code></pre> to Component interface. Leaf checks its own type and returns itself if matching. Composite recursively calls <code>search()</code> on all children and aggregates results.</p>
+          <p><strong>Solution 2:</strong> Keep the Composite structure unchanged. Create a separate <code>FileSearcher</code> class that traverses the structure and performs searches.</p>
+        </div>
+      ),
+      component: (
+        <MultipleChoiceQuestion
+          question="Analyse these solutions in terms of the Composite pattern's structure. Which statement is most accurate?"
+          options={[
+            "A. Solution 1 is better - all operations should be in the Component interface for uniform treatment",
+            "B. Solution 2 is better - it suggests the operation doesn't belong in the core pattern and hints at the Iterator or Visitor pattern",
+            "C. Both violate the Composite pattern by adding functionality after deployment.",
+            "D. Solution 1 violates the pattern because search operations cannot use the tree structure.",
+          ]}
+          correctAnswerIndex={1}
+          feedback="We need to distinguish between operations intrinsic to the Composite structure (which belong in Component) and external traversal algorithms (which suggest separate patterns)."
+        />
       ),
     },
   ];
