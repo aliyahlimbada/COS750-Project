@@ -38,6 +38,10 @@ import { TheoristsGuidance } from "./components/5_Guidance/TheoristsGuidance";
 import { ReflectorsPerformance } from "./components/6_Performance/ReflectorsPerformance";
 import { TheoristsPerformance } from "./components/6_Performance/TheoristsPerformance";
 
+//8. Assessment
+import { Assessment } from "./components/8_Assessment/Assessment";
+import { ActivistPerformance } from "./components/6_Performance/ActivistPerformance";
+
 type ContentPiece = {
   text?: string;
   visual?: JSX.Element; 
@@ -156,7 +160,7 @@ const pagesData: PagesData = {
     content: {
       Activist: { 
         text: "Coming soon...",
-        // visual: <ActivistsPerformance />
+        visual: <ActivistPerformance />
       },
       Theorist: { 
         text: "",
@@ -168,9 +172,31 @@ const pagesData: PagesData = {
       },
       Pragmatist: { 
         text: "Coming soon...",
+        visual: <ActivistPerformance />
       }
     }
   },
+
+  7: {
+    title: "Chapter 8: Final Challenge - The Pizza Builder",
+    content: {
+      Activist: { text: "", visual: <Assessment/> }, // Placeholder
+      Theorist: { text: "", visual: <Assessment />},
+      Reflector: { text: "", visual: <Assessment /> },
+      Pragmatist: { text: "", visual: <Assessment/> } // Placeholder
+    }
+  },
+
+  8: {
+    title: "Conclusion",
+    content: {
+      Activist:   { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> },
+      Theorist:   { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> },
+      Reflector:  { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> },
+      Pragmatist: { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> }
+    }
+  }
+
 };
 
 function App() {
