@@ -148,7 +148,7 @@ body, html, #root {
 
 .learning-style-btn.active {
   background-color: #DDA853;
-  color: white;
+  color: 0056b3;
   font-weight: bold;
 }
 
@@ -1170,7 +1170,8 @@ line-height: 2;
  .design-task {
   width: 100%;
   margin-bottom: 10px;
-  border: 1px solid #007bff;
+  border: 1px solid grey;
+  border-radius: 10px;
   flex-direction: row;
   align-items: center;
   text-align: center; 
