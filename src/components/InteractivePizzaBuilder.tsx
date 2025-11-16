@@ -111,9 +111,6 @@ export const InteractivePizzaBuilder = () => {
         <div className="canvas-header">
           <h4>My Pizza</h4>
           <span>Drag toppings from the menu here</span>
-          <button className="reset-pizza-btn" onClick={handleReset}>
-            Reset Pizza
-          </button>
         </div>
         
         <div className="toppings-area">
@@ -122,6 +119,9 @@ export const InteractivePizzaBuilder = () => {
             : <p className="empty-notice">Your pizza is empty!</p>
           }
         </div>
+        <button className="reset-pizza-btn" onClick={handleReset}>
+            Reset Pizza
+          </button>
       </div>
     </div>
   );

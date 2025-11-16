@@ -76,7 +76,10 @@ export const Assessment = () => {
         <div className="question-block">
           <p className="question-prompt">Use the interactive builder below to familiarize yourself with the menu. A MeatLovers pizza already includes Pepperoni, Beef Sausage, and Salami.</p>
           <InteractivePizzaBuilder />
-          <p style={{marginTop: '1rem'}}><strong>Question:</strong> You want to order a MeatLovers pizza, but add extra Cheese, Green Peppers, and Onions. How much will your final pizza cost?</p>
+          <p style={{marginTop: '1rem'}}> 
+            <strong>Question:</strong>
+             </p>
+          <p>You want to order a MeatLovers pizza, but add extra Cheese, Green Peppers, and Onions. How much will your final pizza cost?</p>
           <textarea className="design-task code-editor" placeholder="Enter your answer here..." value={answers.q2} onChange={e => handleAnswerChange('q2', e.target.value)} />
         </div>
       )
@@ -147,20 +150,31 @@ export const Assessment = () => {
   // showing the scenario
   if (!isStarted) {
     return (
+      <div className="visual-container">
+      <div className="feature-request-ticket">
       <div className="summative-container">
         <div className="scenario-description">
-          <p>After visiting family abroad in Naples, Italy, Romeo came home to South Africa and dreamt of
+           <div className="ticket-body"> 
+            <h4>Assessment</h4></div>
+              <p>
+                After visiting family abroad in Naples, Italy, Romeo came home to South Africa and dreamt of
                 Romeo’s Pizza. A family based pizza shop that puts the customer first by listening to their requests
-                and updating the menu as needed.<br></br>
+                and updating the menu as needed.
+                <br></br>
+                <br></br>
                 Romeo uses recipes that his Nonna gave him from Naples. These wood-oven pizzas have taken
-                over the Hatfield area with everybody wanting a taste of authentic Italian pizza.<br></br>
+                over the Hatfield area with everybody wanting a taste of authentic Italian pizza.
+                <br></br>
+                <br></br>
                 Romeo started off with a Pepperoni pizza and a Vegetarian pizza. After listening to customer
                 requests, Romeo introduced the Meat Lovers pizza - an extension of the Pepperoni pizza and the
                 Vegetarian Deluxe - an extension of the normal Vegetarian pizza. Romeo wants to make sure that
                 he can always create more pizza types or extend existing types for his customers.
-            </p>
+              </p>
         </div>
         <button className="start-assessment-btn" onClick={() => setIsStarted(true)}>Start Assessment</button>
+      </div>
+      </div>
       </div>
     );
   }
@@ -169,25 +183,56 @@ export const Assessment = () => {
 
   if (isSubmitted) {
     return (
+      <div className="visual-container">
+      <div className="feature-request-ticket">
       <div className="results-view">
         <h2>Assessment Complete!</h2>
         <p className="final-score">Your Score: <strong>{score} / {questions.length}</strong></p>
         <div className="answer-review">
-          <h4>Answer Key & Explanations</h4>
-          <div className="review-item"><strong>1. Identify the Roles:</strong> Correct answer was B. PizzaComponent is the Component, Topping is the Leaf, and ToppingGroup is the Composite.</div>
-          <div className="review-item"><strong>2. Calculate the Cost:</strong> The correct answer is R113.00. (MeatLovers Base: R80.00 + Cheese: R15.00 + Green Peppers: R10.00 + Onions: R8.00 = R113.00).</div>
-          <div className="review-item"><strong>3. Evaluate Ownership:</strong> Correct answer is A, Aggregation. A PizzaComponent can either be a Topping or a ToppingGroup, and a Topping can exist even if it is not on a pizza. </div>
-          <div className="review-item"><strong>4. Complete the Code:</strong> The correct implementation is <code>void ToppingGroup::addTopping(PizzaComponent* topping)</code>. So the answers are (a) ToppingGroup, (b) topping, and (c) toppingsList.</div>
-          <div className="review-item"><strong>5. Identify the Principle:</strong> The principle is Polymorphism. It allows the client to treat different objects (Topping, ToppingGroup) that share a common interface (PizzaComponent) in a uniform way.</div>
+          <h3 className='visual-title'>Answer Key & Explanations</h3>
+          <div className="review-item">
+            <h4>
+              1. Identify the Roles:
+            </h4>
+            Correct answer was B. PizzaComponent is the Component, Topping is the Leaf, and ToppingGroup is the Composite.
+            </div>
+          <div className="review-item">
+            <h4>
+              2. Calculate the Cost:
+            </h4>
+            The correct answer is R113.00. (MeatLovers Base: R80.00 + Cheese: R15.00 + Green Peppers: R10.00 + Onions: R8.00 = R113.00).
+            </div>
+          <div className="review-item">
+            <h4>
+              3. Evaluate Ownership
+            </h4>
+            Correct answer is A, Aggregation. A PizzaComponent can either be a Topping or a ToppingGroup, and a Topping can exist even if it is not on a pizza. 
+            </div>
+          <div className="review-item">
+            <h4>
+              4. Complete the Code:
+            </h4>
+             The correct implementation is <code>void ToppingGroup::addTopping(PizzaComponent* topping)</code>. So the answers are (a) ToppingGroup, (b) topping, and (c) toppingsList.
+            </div>
+          <div className="review-item">
+            <h4>
+              5. Identify the Principle:
+            </h4>
+             The principle is Polymorphism. It allows the client to treat different objects (Topping, ToppingGroup) that share a common interface (PizzaComponent) in a uniform way.
+            </div>
         </div>
+      </div>
+      </div>
       </div>
     );
   }
 
   return (
+         <div className="visual-container">
+      <div className="feature-request-ticket">
     <div>
       <div style={{ minHeight: '500px' }}>
-        <h3>{currentQuestion.title}</h3>
+        <h3 className="visual-title">{currentQuestion.title}</h3>
         {currentQuestion.component}
       </div>
 
@@ -200,6 +245,8 @@ export const Assessment = () => {
           <button onClick={() => setCurrentIndex(prev => prev + 1)} className="nav-btn next-btn">Next</button>
         )}
       </div>
+    </div>
+    </div>
     </div>
   );
 };

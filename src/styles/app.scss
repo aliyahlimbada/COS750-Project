@@ -814,15 +814,15 @@ body, html, #root {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
-  
+  width: 100%;
+
   .option-label {
     display: flex;
     align-items: center;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 1.5rem;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: white;
+    background-color: #eef2ff;
     
     input {
       margin-right: 0.75rem;
@@ -830,25 +830,20 @@ body, html, #root {
   }
 }
 
+
+
+
 // Fill in the Blank Styles
-.fitb-container {
+.code-block.fitb-code  {
+line-height: 2;
+}
+
+.code-block.fitb-code .blank-input {
+  border: 1px solid grey;
+  border-radius: 4px;
   font-size: 1.1rem;
-  line-height: 2;
-
-  .blank-input {
-    border: none;
-    border-bottom: 2px solid #ccc;
-    background: transparent;
-    font-size: 1.1rem;
-    text-align: center;
-    width: 150px;
-    margin: 0 8px;
-
-    &:focus {
-      outline: none;
-      border-bottom-color: #007bff;
-    }
-  }
+  width: 150px;
+  margin: 0 8px;
 }
 
 
@@ -910,7 +905,7 @@ body, html, #root {
 }
 
 .nav-btn {
-  background-color: #005a9e;
+  background-color: #DDA853;
   color: #fff;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -996,7 +991,7 @@ body, html, #root {
 .pizza-builder-container {
   display: flex;
   gap: 2rem;
-  background-color: #e9ecef;
+  background-color: #eef2ff;
   padding: 1.5rem;
   border-radius: 8px;
   min-height: 400px;
@@ -1006,15 +1001,18 @@ body, html, #root {
   }
 }
 
+    
 .toolbox {
   flex-basis: 250px;
   background-color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 4px;
   border: 1px solid #dee2e6;
   h4 { margin-top: 0; };
-  max-height: 400px;
+  height: 400px;
   overflow-y: auto;
+  flex-direction: column;
+  align-items: center;
 }
 
 .topping-item {
@@ -1025,18 +1023,23 @@ body, html, #root {
   border-radius: 4px;
   cursor: grab;
   &:active { cursor: grabbing; }
+
+  &:hover{
+    background-color: #eef2ff;
+  }
 }
 
 .pizza-canvas {
+   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   background-color: white;
   padding: 1rem;
   border: 2px dashed #ced4da;
   border-radius: 4px;
   transition: all 0.2s;
-  max-height: 400px;
   overflow-y: auto;
-  
+
   &.over {
     border-color: #007bff;
     background-color: #e6f7ff;
@@ -1044,7 +1047,7 @@ body, html, #root {
 
   .canvas-header {
     display: flex;
-    justify-content: space-between; 
+    flex-direction: column;
     align-items: center; 
     text-align: left;
 
@@ -1052,6 +1055,10 @@ body, html, #root {
       margin: 0; 
     }
   }
+
+  .reset-pizza-btn {
+  margin-top: auto;   /* Pushes button to bottom */
+}
 
   .empty-notice { text-align: center; color: #6c757d; }
 }
@@ -1083,7 +1090,7 @@ body, html, #root {
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
-  background-color: #007bff;
+  background-color: #DDA853;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -1111,6 +1118,37 @@ body, html, #root {
     color: white;
   }
 }
+
+.question-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keeps text aligned left */
+
+  .question-prompt {
+    margin-bottom: 1rem;
+  }
+
+ .design-task {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #007bff;
+  flex-direction: row;
+  align-items: center;
+  text-align: center; 
+  padding-top: 15px;
+
+  .code-editor {
+    width: 100%;
+    min-height: 120px;
+    border-radius: 15px;
+    padding: 0.75rem;
+    text-align: center;   /* centers placeholder + typed text */
+    box-sizing: border-box;
+  }
+}
+
+}
+
 
 // stuff for code blocks
 
