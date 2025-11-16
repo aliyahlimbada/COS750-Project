@@ -1233,12 +1233,13 @@ line-height: 2;
 //   }
 // }
 
+// change b
 .accessibility-controls {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1000;
-  background-color: white;
+  background-color: #f3f3e0;
   border-radius: 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   display: flex;
@@ -1255,8 +1256,14 @@ line-height: 2;
     transition: all 0.2s;
 
     &.active {
-      background-color: #007bff;
+      background-color: #DDA853;
       color: white;
     }
+
+    &:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+    
   }
 }
