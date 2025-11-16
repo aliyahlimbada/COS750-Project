@@ -42,6 +42,7 @@ import { TheoristsPerformance } from "./components/6_Performance/TheoristsPerfor
 import { Assessment } from "./components/8_Assessment/Assessment";
 import { ActivistPerformance } from "./components/6_Performance/ActivistPerformance";
 import { Conclusion } from "./components/9_Conclusion/Conclusion";
+import { AccessibilityControls } from "./components/AccessibilityControls";
 
 type ContentPiece = {
   text?: string;
@@ -214,6 +215,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <AccessibilityControls /> {/* 2. Place the controls component here */}
       <div className="page-container">
         <div className={`arrow left ${page === 1 ? "disabled" : ""}`} onClick={prevPage}>
           <ChevronLeft size={60} /> 
