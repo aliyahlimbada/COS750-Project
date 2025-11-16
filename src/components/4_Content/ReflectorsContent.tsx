@@ -10,7 +10,7 @@ export const ReflectorsContent = () => (
     <div className="case-studies">
       <div className="study">
         <h5>GUI Toolkits</h5>
-        <p>A window contains panels, which contain buttons and text fields.</p>
+        <p>A window is made up of panels. The panels then contain buttons and text fields.</p>
         <RevealableAnswer
           question={<p>What is the Component, Leaf, and Composite here?</p>}
           answer={

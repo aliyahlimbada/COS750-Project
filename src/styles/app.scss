@@ -14,10 +14,6 @@ body {
   font-size: 1rem; 
 }
 
-h1, h2, h3 {
-  font-size: 1.8rem; 
-}
-
 p, button, label, span, input, textarea {
   font-size: 1rem; 
 }
@@ -58,7 +54,6 @@ body, html, #root {
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   display: flex;
-  gap: 20px;
   color: #183b4e;
   padding-bottom: 20px; 
 }
@@ -114,8 +109,8 @@ body, html, #root {
   margin-top: 80px;
   height: 80%;
   border-radius: 12px;
-  max-width: 700px;
-  max-height: 600px;
+  max-width: 750px;
+  max-height: 700px;
   display: flex;
   justify-content: center; /* Horizontal center */
   align-items: center;     /* Vertical center */
@@ -306,13 +301,12 @@ body, html, #root {
 
   // Uniformity Puzzle Styles - theorist
 .uniformity-puzzle {
-  width: 100%;
-  max-width: 600px;
+  width: 665px;
   max-height: 600px;
   border: 1px solid #DDA853;
   border-radius: 20px;
   background-color: #f9fafb;
-  padding: 16px 16px;
+  padding: 24px 28px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   text-align: left;
   font-family: 'Inter', sans-serif;
@@ -361,10 +355,13 @@ body, html, #root {
     }
   }
 
+      
+      
+      
   .puzzle-question {
     background-color: #eef2ff;
-    border-left: 4px solid #9091a7;
-    padding: 0.75rem 1rem;
+    border-left: 4px solid #6366f1;
+    padding: 10px;
     border-radius: 0.5rem;
     font-size: 0.95rem;
     color: #1f2937;
@@ -410,12 +407,11 @@ body, html, #root {
 
 // ripple effect scenario - reflector
 .ripple-effect-scenario {
-  width: 100%;
-  max-width: 650px;
+  width: 665px;
   border: 1px solid #DDA853;
   border-radius: 1rem;
   background-color: #f9fafb;
-  padding: 1.5rem 1.75rem;
+  padding: 24px 28px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   text-align: left;
   font-family: 'Inter', sans-serif;
@@ -513,12 +509,11 @@ body, html, #root {
 
 // Feature request - pragmatist
 .feature-request-ticket {
-  width: 100%;
-  max-width: 650px;
+  width: 665px;
   border: 1px solid #DDA853;
   border-radius: 1rem;
   background-color: #f9fafb;
-  padding: 1.5rem 1.75rem;
+  padding: 24px 28px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   text-align: left;
   font-family: 'Inter', sans-serif;
@@ -529,7 +524,7 @@ body, html, #root {
   .ticket-body {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    // gap: 1rem;
     overflow-y: auto;
     max-height: 600px;
 
@@ -586,9 +581,7 @@ body, html, #root {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
-    &:hover {
-      background-color: #e6f7ff;
-    }
+    &:hover { background-color: #0056b3; color: white;}
   }
 
   .answer-content {
@@ -672,11 +665,16 @@ body, html, #root {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
+
     button {
       padding: 10px 15px;
+      border-radius: 12px;
+      border-width: 1px;
       font-size: 1rem;
       cursor: pointer;
-      &:disabled { opacity: 0.5; cursor: not-allowed; }
+         &:hover { background-color: #0056b3; border: none; color: white;}
+      &:disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none;}
+   
     }
   }
   .builder-diagram {
@@ -905,9 +903,16 @@ line-height: 2;
 }
 
 // FITB Input states
-.fitb-container .blank-input {
+.fitb-container{
+line-height: 2;
+ .blank-input {
+  border-width: 1px;
+  border-radius: 8px;
+
   &.correct { border-bottom-color: #28a745; background-color: #f0fff4; }
   &.incorrect { border-bottom-color: #dc3545; background-color: #fff0f1; }
+  }
+  
 }
 
 // Feedback box (shared)
@@ -981,7 +986,7 @@ line-height: 2;
     width: 100%;
     padding: 1rem;
     border: 1px solid #ccc;
-    background-color: white;
+     background-color: #eef2ff;
     text-align: left;
     cursor: pointer;
     border-radius: 4px;

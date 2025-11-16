@@ -1,7 +1,7 @@
 import '../../styles/app.scss';
 
 export const ActivistsObjectives = () => (
-  <div className="visual-container activist-objectives">
+  <div className="visual-container .activist-objectives">
     <div className="feature-request-ticket">
         <h2 className="visual-title">Activist Learning Objectives</h2>
         <div className="ticket-body">
