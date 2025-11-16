@@ -41,6 +41,7 @@ import { TheoristsPerformance } from "./components/6_Performance/TheoristsPerfor
 //8. Assessment
 import { Assessment } from "./components/8_Assessment/Assessment";
 import { ActivistPerformance } from "./components/6_Performance/ActivistPerformance";
+import { Conclusion } from "./components/9_Conclusion/Conclusion";
 
 type ContentPiece = {
   text?: string;
@@ -190,10 +191,10 @@ const pagesData: PagesData = {
   8: {
     title: "Conclusion",
     content: {
-      Activist:   { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> },
-      Theorist:   { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> },
-      Reflector:  { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> },
-      Pragmatist: { text: "Congratulations, you've completed the challenge! 🎉", visual: <></> }
+      Activist:   { text: "Congratulations, you've completed the challenge! 🎉", visual: < Conclusion /> },
+      Theorist:   { text: "Congratulations, you've completed the challenge! 🎉", visual: < Conclusion /> },
+      Reflector:  { text: "Congratulations, you've completed the challenge! 🎉", visual: < Conclusion /> },
+      Pragmatist: { text: "Congratulations, you've completed the challenge! 🎉", visual: < Conclusion /> }
     }
   }
 
